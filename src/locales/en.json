@@ -1,0 +1,61 @@
+{
+  "common": { "next": "Next", "start": "Start", "brand": "Klutch Klean" },
+  "chooseLanguage": {
+    "title": "Choose the language",
+    "helper": "Your preferred language will be used throughout the application"
+  },
+  "start": {
+    "tagline": "Do what you do best —\n{{brand}} handles the rest."
+  },
+  "access": {
+    "title": "Welcome to {{brand}}!",
+    "helper": "We’ll guide you through the platform to help you manage your services with ease. This walkthrough is tailored to your role and will only take a few minutes.",
+    "tutorial": "Tutorial",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+
+  "languages": {
+    "fr": "French",
+    "en": "English",
+    "es": "Spanish",
+    "pt": "Portuguese",
+    "zh": "Chinese",
+    "de": "German"
+  },
+  "loading": {
+    "description": "We connect people and businesses with reliable outdoor maintenance services. From landscaping to cleaning, manage everything in one place."
+  },
+  "tutorials": {
+    "finish": "Start Now",
+    "skip": "Skip",
+    "gardening": {
+      "title": "Gardening, cleaning, or junk removal?",
+      "desc": "Gardening, cleaning, or junk removal? Browse categories and filter by availability, rating, or location."
+    },
+    "cleaning": {
+      "title": "Cleaning services",
+      "desc": "Request on-demand or future services. Track every request from your profile."
+    },
+    "junk": {
+      "title": "Pay securely in the app",
+      "desc": "Rate your providers, and receive updates on service progress."
+    }
+  },
+  "login": {
+    "title": "Welcome!",
+    "subtitle": "Login with your email",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "show": "Show",
+    "hide": "Hide",
+    "forgot": "Forgot Password?",
+    "cta": "Login",
+    "noAccount": "Already have an Account?",
+    "createAccount": "Create Account",
+    "invalidEmail": "Invalid email",
+    "invalidPassword": "Invalid password"
+  }
+}

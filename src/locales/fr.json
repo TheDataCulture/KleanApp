@@ -1,0 +1,44 @@
+{
+  "common": { "next": "Suivant", "start": "Commencer" },
+  "chooseLanguage": {
+    "title": "Choisissez la langue",
+    "helper": "Votre langue préférée sera utilisée dans toute l'application"
+  },
+  "start": {
+    "tagline": "Faites ce que vous faites le mieux —\n{{brand}} s’occupe du reste."
+  },
+  "access": {
+    "title": "Bienvenue sur {{brand}} !",
+    "helper": "Nous vous guiderons à travers la plateforme pour vous aider à gérer vos services facilement. Ce parcours est adapté à votre rôle et ne prendra que quelques minutes.",
+    "tutorial": "Tutoriel",
+    "login": "Se connecter",
+    "signup": "S'inscrire"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "Anglais",
+    "es": "Espagnol",
+    "pt": "Portugais",
+    "zh": "Chinois",
+    "de": "Allemand"
+  },
+  "loading": {
+    "description": "Nous mettons en relation des personnes et des entreprises avec des services fiables d’entretien extérieur. De l’aménagement paysager au nettoyage, gérez tout en un seul endroit."
+  },
+  "tutorials": {
+    "finish": "Commencer maintenant",
+    "tutorials": { "skip": "Ignorer" },
+    "gardening": {
+      "title": "Jardinage, nettoyage ou enlèvement d’encombrants ?",
+      "desc": "Jardinage, nettoyage ou enlèvement d’encombrants ? Parcourez les catégories et filtrez par disponibilité, note ou localisation."
+    },
+    "cleaning": {
+      "title": "Services de nettoyage",
+      "desc": "Demandez des services à la demande ou planifiés. Suivez chaque demande depuis votre profil."
+    },
+    "junk": {
+      "title": "Payez en toute sécurité dans l’application",
+      "desc": "Évaluez vos prestataires et recevez des mises à jour sur l’avancement du service."
+    }
+  }
+}

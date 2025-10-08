@@ -1,0 +1,44 @@
+{
+  "common": { "next": "Siguiente", "start": "Comenzar" },
+  "chooseLanguage": {
+    "title": "Elige el idioma",
+    "helper": "Tu idioma preferido se usará en toda la aplicación"
+  },
+  "start": {
+    "tagline": "Haz lo que mejor sabes hacer —\n{{brand}} se encarga del resto."
+  },
+  "access": {
+    "title": "¡Bienvenido a {{brand}}!",
+    "helper": "Te guiaremos por la plataforma para que gestiones tus servicios con facilidad. Este recorrido está adaptado a tu rol y solo tomará unos minutos.",
+    "tutorial": "Tutorial",
+    "login": "Iniciar sesión",
+    "signup": "Crear cuenta"
+  },
+  "languages": {
+    "fr": "Francés",
+    "en": "Inglés",
+    "es": "Español",
+    "pt": "Portugués",
+    "zh": "Chino",
+    "de": "Alemán"
+  },
+  "loading": {
+    "description": "Conectamos personas y negocios con servicios confiables de mantenimiento exterior. Desde jardinería hasta limpieza, gestiona todo en un solo lugar."
+  },
+  "tutorials": {
+    "finish": "Empezar ahora",
+    "skip": "Omitir",
+    "gardening": {
+      "title": "¿Jardinería, limpieza o retiro de basura?",
+      "desc": "¿Jardinería, limpieza o retiro de basura? Explora categorías y filtra por disponibilidad, calificación o ubicación."
+    },
+    "cleaning": {
+      "title": "Servicios de limpieza",
+      "desc": "Solicita servicios bajo demanda o programados. Sigue cada solicitud desde tu perfil."
+    },
+    "junk": {
+      "title": "Paga de forma segura en la app",
+      "desc": "Califica a tus proveedores y recibe actualizaciones del progreso del servicio."
+    }
+  }
+}

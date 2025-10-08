@@ -1,0 +1,44 @@
+{
+  "common": { "next": "Próximo", "start": "Começar" },
+  "chooseLanguage": {
+    "title": "Escolha o idioma",
+    "helper": "Seu idioma preferido será usado em todo o aplicativo"
+  },
+  "start": {
+    "tagline": "Faça o que você faz de melhor —\n{{brand}} cuida do resto."
+  },
+  "access": {
+    "title": "Bem-vindo ao {{brand}}!",
+    "helper": "Vamos guiá-lo pela plataforma para ajudar você a gerenciar seus serviços com facilidade. Este passo a passo é adaptado ao seu papel e levará apenas alguns minutos.",
+    "tutorial": "Tutorial",
+    "login": "Entrar",
+    "signup": "Criar conta"
+  },
+  "languages": {
+    "fr": "Francês",
+    "en": "Inglês",
+    "es": "Espanhol",
+    "pt": "Português",
+    "zh": "Chinês",
+    "de": "Alemão"
+  },
+  "loading": {
+    "description": "Conectamos pessoas e empresas a serviços confiáveis de manutenção externa. Do paisagismo à limpeza, gerencie tudo em um só lugar."
+  },
+  "tutorials": {
+    "finish": "Começar agora",
+    "tutorials": { "skip": "Pular" },
+    "gardening": {
+      "title": "Jardinagem, limpeza ou remoção de entulho?",
+      "desc": "Jardinagem, limpeza ou remoção de entulho? Navegue pelas categorias e filtre por disponibilidade, avaliação ou localização."
+    },
+    "cleaning": {
+      "title": "Serviços de limpeza",
+      "desc": "Solicite serviços sob demanda ou agendados. Acompanhe cada solicitação no seu perfil."
+    },
+    "junk": {
+      "title": "Pague com segurança no app",
+      "desc": "Avalie os prestadores e receba atualizações sobre o andamento do serviço."
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "klean",
+    "slug": "klean",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "klean",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+      "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#00140B"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.klean"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/appLoading.png",
+          "resizeMode": "cover",
+          "backgroundColor": "#00140B",
+          "dark": {
+            "backgroundColor": "#00140B"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

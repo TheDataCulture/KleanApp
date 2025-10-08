@@ -1,0 +1,61 @@
+# ──────────────────────────────
+# Dependencies
+node_modules/
+
+# ──────────────────────────────
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+expo-env.d.ts
+
+# ──────────────────────────────
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# ──────────────────────────────
+# Metro / cache
+.metro-health-check*
+.cache/
+
+# ──────────────────────────────
+# Logs / debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# ──────────────────────────────
+# macOS / Windows
+.DS_Store
+Thumbs.db
+*.pem
+
+# ──────────────────────────────
+# Environment files
+.env
+.env*.local
+
+# ──────────────────────────────
+# TypeScript
+*.tsbuildinfo
+
+# ──────────────────────────────
+# IDEs and editors
+.vscode/
+.idea/
+
+# ──────────────────────────────
+# Example / temporary files
+app-example
+
+# ──────────────────────────────
+# Generated native folders
+ios/
+android/

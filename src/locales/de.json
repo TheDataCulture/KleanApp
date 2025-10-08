@@ -1,0 +1,44 @@
+{
+  "common": { "next": "Weiter", "start": "Starten" },
+  "chooseLanguage": {
+    "title": "Sprache auswählen",
+    "helper": "Ihre bevorzugte Sprache wird in der gesamten App verwendet"
+  },
+  "start": {
+    "tagline": "Mach das, was du am besten kannst —\n{{brand}} kümmert sich um den Rest."
+  },
+  "access": {
+    "title": "Willkommen bei {{brand}}!",
+    "helper": "Wir führen dich durch die Plattform, damit du deine Services ganz einfach verwalten kannst. Diese Einführung ist auf deine Rolle zugeschnitten und dauert nur wenige Minuten.",
+    "tutorial": "Tutorial",
+    "login": "Anmelden",
+    "signup": "Registrieren"
+  },
+  "languages": {
+    "fr": "Französisch",
+    "en": "Englisch",
+    "es": "Spanisch",
+    "pt": "Portugiesisch",
+    "zh": "Chinesisch",
+    "de": "Deutsch"
+  },
+  "loading": {
+    "description": "Wir verbinden Menschen und Unternehmen mit zuverlässigen Dienstleistungen für Außenpflege. Von Gartenarbeit bis Reinigung – alles an einem Ort verwalten."
+  },
+  "tutorials": {
+    "finish": "Jetzt starten",
+    "tutorials": { "skip": "Überspringen" },
+    "gardening": {
+      "title": "Gartenarbeit, Reinigung oder Entrümpelung?",
+      "desc": "Gartenarbeit, Reinigung oder Entrümpelung? Stöbere in Kategorien und filtere nach Verfügbarkeit, Bewertung oder Standort."
+    },
+    "cleaning": {
+      "title": "Reinigungsservices",
+      "desc": "Buche Services sofort oder für später. Verfolge jede Anfrage in deinem Profil."
+    },
+    "junk": {
+      "title": "Sicher in der App bezahlen",
+      "desc": "Bewerte deine Dienstleister und erhalte Updates zum Fortschritt des Auftrags."
+    }
+  }
+}
