@@ -1,50 +1,45 @@
-# Welcome to your Expo app 👋
+<div align="center">
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img src="./assets/images/logo-icon.png" alt="Klean Logo" width="120" />
 
-## Get started
+# 🧼 **Klean App**
+### _React Native (Expo) · TypeScript · i18n · Animated_
 
-1. Install dependencies
+🌍 Onboarding moderno con selección de idioma, animaciones fluidas y flujo base de login/signup.
 
-   ```bash
-   npm install
-   ```
+[![Expo](https://img.shields.io/badge/Expo-Router-000000?logo=expo&logoColor=white)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React Native](https://img.shields.io/badge/React_Native-20232A?logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+[![License](https://img.shields.io/badge/license-Private-informational.svg)](#-licencia)
 
-2. Start the app
+</div>
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🧭 **Descripción**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Onboarding con **selección de idioma (i18n)**, pantallas de *loading/start*, *access*, carrusel de tutoriales con animaciones y puntos interactivos, y flujo base de **login/signup**.  
+Construida con **Expo Router**, **TypeScript**, **react-i18next**, **expo-image** y **Animated**.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## ⚙️ **Requisitos**
 
-When you're ready, run:
+- **Node 18+**
+- **Expo CLI**
+  ```bash
+  npm i -g expo-cli
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🧩 **Instalación**
+# 1️⃣ Instalar dependencias
+npm install
 
-## Learn more
+# 2️⃣ Instalar pods de iOS (solo en macOS)
+npx pod-install
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# 3️⃣ Ejecutar
+npm run start
+# o directamente
+npm run ios
+npm run android
