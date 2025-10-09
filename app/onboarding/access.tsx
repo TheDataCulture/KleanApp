@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View, Text, Pressable, StyleSheet, Platform, ScrollView } from "react-native";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useTranslation } from "react-i18next";
@@ -12,6 +12,13 @@ const BG = "#00140B";
 export default function OnboardingAccess() {
   const { t } = useTranslation();
   const r = useResponsive();
+  const insets = useSafeAreaInsets();
+
+  const topGap = useMemo(() => {
+    if (r.height <= 640) return r.mScale(8);  
+    if (r.height <= 720) return r.mScale(42);   
+    return r.mScale(90);                        
+  }, [r]);
 
   const s = useMemo(
     () =>
@@ -20,7 +27,6 @@ export default function OnboardingAccess() {
         safe: { flex: 1 },
         bg: { ...StyleSheet.absoluteFillObject },
 
-        // Header
         header: {
           paddingTop: r.mScale(16),
           alignItems: "center",
@@ -34,7 +40,6 @@ export default function OnboardingAccess() {
           textAlign: "center",
         },
 
-        // Card contenedor
         card: {
           flex: 1,
           backgroundColor: "#fff",
@@ -62,14 +67,17 @@ export default function OnboardingAccess() {
           borderTopRightRadius: r.mScale(28),
         },
 
-        body: {
-          flex: 1,
-          marginTop: 90,
+        // Scroll del cuerpo para evitar cortes y respetar el safe area inferior
+        bodyScroll: { flex: 1 },
+        bodyContent: {
           paddingHorizontal: r.mScale(32),
-          paddingTop: r.mScale(28),
+          paddingBottom: Math.max(insets.bottom, r.mScale(16)),
           alignItems: "center",
           gap: r.mScale(20),
+          marginTop: topGap,
+          paddingTop: r.mScale(28),
         },
+
         helper: {
           color: "#4A4A4A",
           textAlign: "center",
@@ -78,7 +86,6 @@ export default function OnboardingAccess() {
           marginBottom: r.mScale(8),
         },
 
-        // Botones
         btn: {
           alignSelf: "stretch",
           backgroundColor: "#B0F200",
@@ -86,7 +93,6 @@ export default function OnboardingAccess() {
           paddingVertical: r.mScale(14),
           alignItems: "center",
           justifyContent: "center",
-          marginTop: r.mScale(10),
         },
         btnText: {
           color: "#494949",
@@ -94,7 +100,7 @@ export default function OnboardingAccess() {
           fontSize: r.mScale(16),
         },
       }),
-    [r]
+    [r, insets.bottom, topGap]
   );
 
   return (
@@ -106,20 +112,15 @@ export default function OnboardingAccess() {
       />
 
       <SafeAreaView style={s.safe}>
-        {/* Header */}
         <View style={s.header}>
           <Image
             source={require("../../assets/images/logo-icon.png")}
             style={s.logo}
             contentFit="contain"
           />
-          <Text style={s.headerTitle}>{t("access.title", {brand:"Klutch Klean"})}</Text>
-
-
-          
+          <Text style={s.headerTitle}>{t("access.title", { brand: "Klutch Klean" })}</Text>
         </View>
 
-        {/* Card */}
         <View style={s.card}>
           <LinearGradient
             colors={["rgba(0,0,0,0.25)", "rgba(0,0,0,0.12)", "transparent"]}
@@ -127,7 +128,12 @@ export default function OnboardingAccess() {
             style={s.innerShadowTop}
           />
 
-          <View style={s.body}>
+          <ScrollView
+            style={s.bodyScroll}
+            contentContainerStyle={s.bodyContent}
+            contentInsetAdjustmentBehavior="always"
+            showsVerticalScrollIndicator={false}
+          >
             <Text style={s.helper}>{t("access.helper")}</Text>
 
             <Pressable style={s.btn} onPress={() => router.push("/onboarding/tutorials")}>
@@ -141,7 +147,7 @@ export default function OnboardingAccess() {
             <Pressable style={s.btn} onPress={() => router.push("/signup")}>
               <Text style={s.btnText}>{t("access.signup")}</Text>
             </Pressable>
-          </View>
+          </ScrollView>
         </View>
       </SafeAreaView>
     </View>
