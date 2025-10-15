@@ -40,5 +40,21 @@
       "title": "Paga de forma segura en la app",
       "desc": "Califica a tus proveedores y recibe actualizaciones del progreso del servicio."
     }
+  },
+  "login": {
+    "title": "¡Bienvenido!",
+    "subtitle": "Inicia sesión con tu correo electrónico",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "Ingresa tu contraseña",
+    "passwordPlaceholder": "Escribe tu contraseña",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "forgot": "¿Olvidaste tu contraseña?",
+    "cta": "Iniciar sesión",
+    "noAccount": "¿No tienes una cuenta?",
+    "createAccount": "Crear cuenta",
+    "invalidEmail": "¡ERROR! Correo inválido *",
+    "invalidPassword": "¡ERROR! Contraseña inválida *"
   }
 }

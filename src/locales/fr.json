@@ -40,5 +40,21 @@
       "title": "Payez en toute sécurité dans l’application",
       "desc": "Évaluez vos prestataires et recevez des mises à jour sur l’avancement du service."
     }
+  },
+  "login": {
+    "title": "Bienvenue !",
+    "subtitle": "Connectez-vous avec votre e-mail",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "Entrez votre mot de passe",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "forgot": "Mot de passe oublié ?",
+    "cta": "Se connecter",
+    "noAccount": "Vous n’avez pas de compte ?",
+    "createAccount": "Créer un compte",
+    "invalidEmail": "ERREUR ! E-mail invalide *",
+    "invalidPassword": "ERREUR ! Mot de passe invalide *"
   }
 }

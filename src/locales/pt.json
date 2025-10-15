@@ -40,5 +40,21 @@
       "title": "Pague com segurança no app",
       "desc": "Avalie os prestadores e receba atualizações sobre o andamento do serviço."
     }
+  },
+  "login": {
+    "title": "Bem-vindo!",
+    "subtitle": "Faça login com seu e-mail",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "Digite sua senha",
+    "passwordPlaceholder": "Insira sua senha",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "forgot": "Esqueceu a senha?",
+    "cta": "Entrar",
+    "noAccount": "Não tem uma conta?",
+    "createAccount": "Criar conta",
+    "invalidEmail": "ERRO! E-mail inválido *",
+    "invalidPassword": "ERRO! Senha inválida *"
   }
 }

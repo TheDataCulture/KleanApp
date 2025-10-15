@@ -46,8 +46,8 @@
     "title": "Welcome!",
     "subtitle": "Login with your email",
     "emailLabel": "Email",
-    "emailPlaceholder": "you@example.com",
-    "passwordLabel": "Password",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "Enter Your Password",
     "passwordPlaceholder": "Enter your password",
     "show": "Show",
     "hide": "Hide",
@@ -55,7 +55,46 @@
     "cta": "Login",
     "noAccount": "Already have an Account?",
     "createAccount": "Create Account",
-    "invalidEmail": "Invalid email",
-    "invalidPassword": "Invalid password"
+    "invalidEmail": "ERROR! Invalid email *",
+    "invalidPassword": "ERROR! Invalid password *"
+  },
+  "recovery": {
+    "title": "Reset password",
+    "helper": "Enter your email address and we'll send you a verification code to securely reset/nyour password.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "invalidEmail": "ERROR! Invalid email *",
+    "send": "Send",
+    "remembered": "Already have an Account?",
+    "backToLogin": "Login"
+  },
+  "code": {
+      "enter":"Enter you code",
+      "sentTo": "Verification code sent to:/n{{email}}",
+      "validFor": "This code is valid for {{minutes}} minutes.",
+      "securityOnce": "For your security, the code can only be used once.",
+      "timerMin": "Time: {{time}} min",
+      "expired": "Code expired",
+      "verify": "Send",
+      "didntReceive": "Didn't receive the code?",
+      "resend": "Resend code"
+  },
+  "reset": {
+    "title": "Set new password",
+    "helper": "Once saved, you can log in using your new credentials",
+    "newPwd": "New password",
+    "newPwdPh": "********",
+    "confirmPwd": "Confirm new password",
+    "confirmPwdPh": "********",
+    "submit": "Submit",
+
+    "rules": {
+      "len": "At least 8 characters long",
+      "letter": "Include at least one letter (A–Z or a–z)",
+      "number": "Include at least one number (0–9)",
+      "personal": "Avoid using personal information (like your name or email)",
+      "reuse": "Do not reuse passwords from other platforms",
+      "symbols": "Stronger if combined with symbols (e.g., @, #, $, %, etc.)"
+    }
   }
 }

@@ -40,5 +40,21 @@
       "title": "Sicher in der App bezahlen",
       "desc": "Bewerte deine Dienstleister und erhalte Updates zum Fortschritt des Auftrags."
     }
+  },
+  "login": {
+    "title": "Willkommen!",
+    "subtitle": "Melden Sie sich mit Ihrer E-Mail an",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "Geben Sie Ihr Passwort ein",
+    "passwordPlaceholder": "Passwort eingeben",
+    "show": "Anzeigen",
+    "hide": "Verbergen",
+    "forgot": "Passwort vergessen?",
+    "cta": "Anmelden",
+    "noAccount": "Sie haben noch kein Konto?",
+    "createAccount": "Konto erstellen",
+    "invalidEmail": "FEHLER! Ungültige E-Mail *",
+    "invalidPassword": "FEHLER! Ungültiges Passwort *"
   }
 }

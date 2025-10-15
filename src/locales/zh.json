@@ -40,5 +40,21 @@
       "title": "在应用内安全付款",
       "desc": "为服务提供者评分，并接收服务进度更新。"
     }
+  },
+  "login": {
+    "title": "欢迎！",
+    "subtitle": "使用电子邮件登录",
+    "emailLabel": "电子邮件",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "输入您的密码",
+    "passwordPlaceholder": "请输入密码",
+    "show": "显示",
+    "hide": "隐藏",
+    "forgot": "忘记密码？",
+    "cta": "登录",
+    "noAccount": "还没有账户？",
+    "createAccount": "创建账户",
+    "invalidEmail": "错误！无效的电子邮件 *",
+    "invalidPassword": "错误！无效的密码 *"
   }
 }

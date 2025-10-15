@@ -14,6 +14,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useTranslation } from "react-i18next";
 import { router } from "expo-router";
 import { useResponsive } from "@/hooks/useResponsive";
+import { EyeIcon } from "@/components/EyeIcon";
 
 const BG = "#00140B";
 
@@ -43,18 +44,17 @@ export default function Login() {
     Animated.timing(enabled, {
       toValue: canSubmit ? 1 : 0,
       duration: 220,
-      useNativeDriver: false, // colores no soportan native driver
+      useNativeDriver: false,
     }).start();
   }, [canSubmit, enabled]);
 
-  // Interpolaciones de color
   const bgColor = enabled.interpolate({
     inputRange: [0, 1],
-    outputRange: ["#DADADA", "#B0F200"],
+    outputRange: ["#A4A4A4", "#B0F200"],
   });
   const textColor = enabled.interpolate({
     inputRange: [0, 1],
-    outputRange: ["#7A7A7A", "#00140B"],
+    outputRange: ["#FFFFFF", "#00140B"],
   });
 
   const s = useMemo(
@@ -72,7 +72,7 @@ export default function Login() {
         logo: {
           width: r.mScale(122),
           height: r.mScale(102),
-          marginBottom: r.mScale(12),
+          marginBottom: r.mScale(52),
         },
         title: {
           color: "#B0F200",
@@ -86,12 +86,13 @@ export default function Login() {
           marginTop: r.mScale(6),
           opacity: 0.9,
           textAlign: "center",
+          marginBottom: r.mScale(22),
         },
 
         card: {
           flex: 1,
           backgroundColor: "#fff",
-          marginTop: r.mScale(28),
+          marginTop: r.mScale(18),
           borderTopLeftRadius: r.mScale(28),
           borderTopRightRadius: r.mScale(28),
           overflow: "hidden",
@@ -115,21 +116,32 @@ export default function Login() {
           borderTopRightRadius: r.mScale(28),
         },
 
-        // Centrado del formulario dentro de la tarjeta
         formWrap: { flex: 1, justifyContent: "center" },
+        cardInner: {
+          flex: 1,
+          position: "relative",
+        },
         form: {
+          flex: 1,
           justifyContent: "center",
-          paddingHorizontal: r.mScale(34),
-          gap: r.mScale(16),
-          alignSelf: "center",
-          width: "100%",
-          maxWidth: r.mScale(420),
+          paddingHorizontal: r.mScale(44),
+          gap: r.mScale(10),
+          paddingBottom: r.mScale(50),
         },
 
         label: {
           color: "#3A3A3A",
           marginBottom: r.mScale(6),
           fontSize: r.mScale(12),
+        },
+
+        footerFixed: {
+          position: "absolute",
+          left: r.mScale(24),
+          right: r.mScale(24),
+          bottom: r.mScale(24),
+          alignItems: "stretch",
+          paddingHorizontal: r.mScale(20),
         },
 
         inputWrap: {
@@ -142,7 +154,7 @@ export default function Login() {
           flexDirection: "row",
           alignItems: "center",
         },
-        input: { flex: 1, color: "#222", fontSize: r.mScale(14) },
+        input: { flex: 1, color: "#A4A4A4", fontSize: r.mScale(14) },
         rightLink: {
           marginLeft: r.mScale(10),
           color: "#6B6B6B",
@@ -155,18 +167,15 @@ export default function Login() {
           marginTop: r.mScale(6),
         },
 
-        rowEnd: { marginTop: r.mScale(6), alignSelf: "flex-end" },
+        rowEnd: { alignSelf: "flex-end" },
         link: { color: "#7BC400", fontSize: r.mScale(12) },
-
-        // Botón (contenedor animado)
         cta: {
-          alignSelf: "center",
+          alignSelf: "stretch",
           borderRadius: r.mScale(28),
           paddingVertical: r.mScale(14),
-          paddingHorizontal: r.mScale(38),
-          alignItems: "center",
           justifyContent: "center",
-          minWidth: r.mScale(220),
+          alignItems: "center",
+          marginBottom: r.mScale(10),
         },
         ctaText: {
           fontWeight: "700",
@@ -176,7 +185,7 @@ export default function Login() {
         footerRow: {
           marginTop: r.mScale(16),
           flexDirection: "row",
-          justifyContent: "center",
+          justifyContent: "space-between",
           gap: r.mScale(6),
           marginBottom: r.mScale(30),
         },
@@ -217,7 +226,7 @@ export default function Login() {
             style={s.innerShadowTop}
           />
 
-          <View style={s.formWrap}>
+          <View style={s.cardInner}>
             <View style={s.form}>
               <View>
                 <Text style={s.label}>{t("login.emailLabel")}</Text>
@@ -268,10 +277,8 @@ export default function Login() {
                     onChangeText={setPassword}
                     onBlur={() => setPwdTouched(true)}
                   />
-                  <Pressable onPress={() => setShowPwd(v => !v)}>
-                    <Text style={s.rightLink}>
-                      {showPwd ? t("login.hide") : t("login.show")}
-                    </Text>
+                  <Pressable onPress={() => setShowPwd((v) => !v)}>
+                    <EyeIcon open={showPwd} />
                   </Pressable>
                 </View>
                 {pwdTouched && !pwdValid ? (
@@ -279,11 +286,19 @@ export default function Login() {
                 ) : null}
               </View>
 
-              <Pressable onPress={() => {}} style={s.rowEnd}>
+              <Pressable
+                onPress={() =>
+                  router.push({
+                    pathname: "/recovery/request",
+                  })
+                }
+                style={s.rowEnd}
+              >
                 <Text style={s.link}>{t("login.forgot")}</Text>
               </Pressable>
+            </View>
 
-              {/* Botón animado */}
+            <View style={s.footerFixed}>
               <Animated.View style={[s.cta, { backgroundColor: bgColor }]}>
                 <Pressable disabled={!canSubmit} onPress={submit}>
                   <Animated.Text style={[s.ctaText, { color: textColor }]}>
