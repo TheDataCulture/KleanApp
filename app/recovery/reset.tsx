@@ -16,6 +16,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useTranslation } from "react-i18next";
 import { useLocalSearchParams, router } from "expo-router";
 import { useResponsive } from "@/hooks/useResponsive";
+import AppButton from "@/components/ui/AppButton";
+import {RuleStatus} from "@/components/RuleStatus";
 
 const BG = "#00140B";
 
@@ -99,12 +101,13 @@ export default function RecoveryReset() {
           fontSize: r.mScale(28),
           fontWeight: "700",
           textAlign: "center",
+          marginTop: r.mScale(50),
         },
 
         card: {
           flex: 1,
           backgroundColor: "#fff",
-          marginTop: r.mScale(28),
+          marginTop: r.mScale(53),
           borderTopLeftRadius: r.mScale(28),
           borderTopRightRadius: r.mScale(28),
           overflow: "hidden",
@@ -132,18 +135,18 @@ export default function RecoveryReset() {
         form: {
           flex: 1,
           justifyContent: "center",
-          paddingHorizontal: r.mScale(24),
+          paddingHorizontal: r.mScale(59),
           gap: r.mScale(14),
         },
         helper: {
-          color: "#6B6B6B",
+          color: "#494949",
           textAlign: "center",
           fontSize: r.mScale(12),
           marginBottom: r.mScale(4),
         },
 
         label: {
-          color: "#3A3A3A",
+          color: "#1B1B1B",
           marginBottom: r.mScale(6),
           fontSize: r.mScale(12),
         },
@@ -226,101 +229,88 @@ export default function RecoveryReset() {
 
           <View style={s.form}>
             <Text style={s.helper}>{t("reset.helper")}</Text>
-
-            <Text style={s.label}>{t("reset.newPwd")}</Text>
-            <View style={s.row}>
-              <TextInput
-                style={s.input}
-                secureTextEntry={!show1}
-                value={pwd}
-                onChangeText={setPwd}
-                placeholder={t("reset.newPwdPh")}
-                placeholderTextColor="#A7A7A7"
-              />
-              <Pressable onPress={() => setShow1((v) => !v)}>
-                <Text style={s.toggle}>
-                  {show1 ? t("login.hide") : t("login.show")}
-                </Text>
-              </Pressable>
+            <View>
+              <Text style={s.label}>{t("reset.newPwd")}</Text>
+              <View style={s.row}>
+                <TextInput
+                  style={s.input}
+                  secureTextEntry={!show1}
+                  value={pwd}
+                  onChangeText={setPwd}
+                  placeholder={t("reset.newPwdPh")}
+                  placeholderTextColor="#A7A7A7"
+                />
+                <Pressable onPress={() => setShow1((v) => !v)}>
+                  <Text style={s.toggle}>
+                    {show1 ? t("login.hide") : t("login.show")}
+                  </Text>
+                </Pressable>
+              </View>
             </View>
 
-            <Text style={s.label}>{t("reset.confirmPwd")}</Text>
-            <View style={s.row}>
-              <TextInput
-                style={s.input}
-                secureTextEntry={!show2}
-                value={confirm}
-                onChangeText={setConfirm}
-                placeholder={t("reset.confirmPwdPh")}
-                placeholderTextColor="#A7A7A7"
-              />
-              <Pressable onPress={() => setShow2((v) => !v)}>
-                <Text style={s.toggle}>
-                  {show2 ? t("login.hide") : t("login.show")}
-                </Text>
-              </Pressable>
+            <View>
+              <Text style={s.label}>{t("reset.confirmPwd")}</Text>
+              <View style={s.row}>
+                <TextInput
+                  style={s.input}
+                  secureTextEntry={!show2}
+                  value={confirm}
+                  onChangeText={setConfirm}
+                  placeholder={t("reset.confirmPwdPh")}
+                  placeholderTextColor="#A7A7A7"
+                />
+                <Pressable onPress={() => setShow2((v) => !v)}>
+                  <Text style={s.toggle}>
+                    {show2 ? t("login.hide") : t("login.show")}
+                  </Text>
+                </Pressable>
+              </View>
             </View>
 
             <View style={s.list}>
               <View style={s.item}>
-                <View
-                  style={[
-                    s.dotBase,
-                    { backgroundColor: ok.len ? "#7BC400" : "#D32F2F" },
-                  ]}
-                />
+                <RuleStatus ok={ok.len} />
                 <Text style={s.ruleText}>{t("reset.rules.len")}</Text>
               </View>
               <View style={s.item}>
-                <View
-                  style={[
-                    s.dotBase,
-                    { backgroundColor: ok.letter ? "#7BC400" : "#D32F2F" },
-                  ]}
-                />
+                <RuleStatus ok={ok.letter} />
                 <Text style={s.ruleText}>{t("reset.rules.letter")}</Text>
               </View>
               <View style={s.item}>
-                <View
-                  style={[
-                    s.dotBase,
-                    { backgroundColor: ok.number ? "#7BC400" : "#D32F2F" },
-                  ]}
-                />
+                <RuleStatus ok={ok.number} />
                 <Text style={s.ruleText}>{t("reset.rules.number")}</Text>
               </View>
               <View style={s.item}>
-                <View
-                  style={[
-                    s.dotBase,
-                    { backgroundColor: ok.personal ? "#7BC400" : "#D32F2F" },
-                  ]}
-                />
+                <RuleStatus ok={ok.personal} />
                 <Text style={s.ruleText}>{t("reset.rules.personal")}</Text>
               </View>
               <View style={s.item}>
-                <View
-                  style={[
-                    s.dotBase,
-                    { backgroundColor: ok.reuse ? "#7BC400" : "#D32F2F" },
-                  ]}
-                />
+                <RuleStatus ok={ok.reuse} />
                 <Text style={s.ruleText}>{t("reset.rules.reuse")}</Text>
               </View>
               <View style={s.item}>
-                <View
-                  style={[
-                    s.dotBase,
-                    { backgroundColor: ok.symbols ? "#7BC400" : "#D32F2F" },
-                  ]}
-                />
+                <RuleStatus ok={ok.symbols} />
                 <Text style={s.ruleText}>{t("reset.rules.symbols")}</Text>
               </View>
             </View>
 
-            <Pressable disabled={!allValid} onPress={submit} style={s.cta}>
-              <Text style={s.ctaText}>{t("reset.submit")}</Text>
-            </Pressable>
+            <AppButton
+              label={t("reset.submit")}
+              disabled={!allValid}
+              size="md"
+              enabledBg="#B0F200"
+              disabledBg="#A4A4A4"
+              enabledText="#494949"
+              disabledText="#FFFFFF"
+              style={{
+                minWidth: r.mScale(200),
+                alignSelf: "stretch",
+              }}
+              onPress={() => {
+                if (!allValid) return;
+                router.push("./verified");
+              }}
+            />
           </View>
         </View>
       </SafeAreaView>

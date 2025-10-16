@@ -87,7 +87,7 @@ export default function RecoveryRequest() {
         },
 
         helperWrap: {
-          alignItems: "center", 
+          alignItems: "center",
           justifyContent: "center",
           paddingHorizontal: r.mScale(12),
           marginTop: r.mScale(90),
@@ -193,24 +193,24 @@ export default function RecoveryRequest() {
                 />
               </View>
 
-                          <AppButton
-              label={t("recovery.send")}
-              onPress={send}
-              disabled={!valid}
-              size="md"
-              enabledBg="#B0F200"
-              disabledBg="#A4A4A4"
-              enabledText="#494949"
-              disabledText="#FFFFFF"
-              style={{ minWidth: r.mScale(200), marginTop: r.mScale(24) }}
-            />
+              <AppButton
+                label={t("recovery.send")}
+                onPress={send}
+                disabled={!valid}
+                size="md"
+                enabledBg="#B0F200"
+                disabledBg="#A4A4A4"
+                enabledText="#494949"
+                disabledText="#FFFFFF"
+                style={{ minWidth: r.mScale(200), marginTop: r.mScale(24) }}
+              />
 
-            <View style={s.footerRow}>
-              <Text style={s.muted}>{t("recovery.remembered")}</Text>
-              <Pressable onPress={() => router.replace("/login")}>
-                <Text style={s.link}>{t("recovery.backToLogin")}</Text>
-              </Pressable>
-            </View>
+              <View style={s.footerRow}>
+                <Text style={s.muted}>{t("recovery.remembered")}</Text>
+                <Pressable onPress={() => router.replace("/login")}>
+                  <Text style={s.link}>{t("recovery.backToLogin")}</Text>
+                </Pressable>
+              </View>
             </View>
 
             {touched && !valid ? (

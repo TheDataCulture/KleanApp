@@ -7,7 +7,6 @@ import {
   ViewStyle,
   TextStyle,
 } from "react-native";
-import { Text } from "react-native";
 import { useResponsive } from "@/hooks/useResponsive";
 
 type Size = "sm" | "md" | "lg";

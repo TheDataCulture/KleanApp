@@ -129,25 +129,6 @@ export default function RecoveryCode() {
         },
 
         timer: { color: "#494949", fontSize: r.mScale(14) },
-
-        cta: {
-          marginTop: r.mScale(10),
-          marginHorizontal: r.mScale(28),
-          alignSelf: "stretch",
-          backgroundColor: "#B0F200",
-          opacity: valid ? 1 : 0.5,
-          borderRadius: r.mScale(28),
-          paddingVertical: r.mScale(14),
-          paddingHorizontal: r.mScale(38),
-          minWidth: r.mScale(200),
-          alignItems: "center",
-          justifyContent: "center",
-        },
-        ctaText: {
-          color: "#1C1C1C",
-          fontWeight: "700",
-          fontSize: r.mScale(16),
-        },
         email: { fontWeight: "500", color: "#767676", fontSize: r.mScale(16) },
 
         linksRow: {
@@ -260,7 +241,14 @@ export default function RecoveryCode() {
               disabledBg="#A4A4A4"
               enabledText="#494949"
               disabledText="#FFFFFF"
-              style={{ minWidth: r.mScale(200), marginHorizontal: r.mScale(30)}}
+              style={{
+                minWidth: r.mScale(200),
+                marginHorizontal: r.mScale(30),
+              }}
+              onPress={() => {
+                if (!valid) return;
+                router.push("../recovery/reset");
+              }}
             />
 
             <View style={s.linksRow}>
