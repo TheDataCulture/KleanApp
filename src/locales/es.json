@@ -56,5 +56,50 @@
     "createAccount": "Crear cuenta",
     "invalidEmail": "¡ERROR! Correo inválido *",
     "invalidPassword": "¡ERROR! Contraseña inválida *"
+  },
+
+  "recovery": {
+    "title": "Restablecer contraseña",
+    "helper": "Ingresa tu correo y te enviaremos un código para restablecer\nseguramente tu contraseña.",
+    "emailLabel": "Correo",
+    "emailPlaceholder": "tucorreo@email.com",
+    "invalidEmail": "¡ERROR! Correo inválido *",
+    "send": "Enviar",
+    "remembered": "¿Ya tienes una cuenta?",
+    "backToLogin": "Iniciar sesión"
+  },
+  "code": {
+    "enter": "Ingresa tu código",
+    "sentTo": "Código de verificación enviado a:\n{{email}}",
+    "validFor": "Este código es válido por {{minutes}} minutos.",
+    "securityOnce": "Por seguridad, el código solo puede usarse una vez.",
+    "timerMin": "Tiempo: {{time}} min",
+    "expired": "Código expirado",
+    "verify": "Enviar",
+    "didntReceive": "¿No recibiste el código?",
+    "resend": "Reenviar código"
+  },
+  "reset": {
+    "title": "Configurar nueva contraseña",
+    "helper": "Una vez guardada, podrás iniciar sesión con tus nuevas credenciales",
+    "newPwd": "Nueva contraseña",
+    "newPwdPh": "********",
+    "confirmPwd": "Confirmar nueva contraseña",
+    "confirmPwdPh": "********",
+    "submit": "Guardar",
+    "rules": {
+      "len": "Al menos 8 caracteres",
+      "letter": "Incluye al menos una letra (A–Z o a–z)",
+      "number": "Incluye al menos un número (0–9)",
+      "personal": "Evita información personal (como tu nombre o correo)",
+      "reuse": "No reutilices contraseñas de otras plataformas",
+      "symbols": "Más fuerte si combina símbolos (p. ej., @, #, $, %)"
+    }
+  },
+  "register": {
+    "howUse": "¿Cómo quieres usar Klean?",
+    "helper": "Selecciona el tipo de usuario que mejor se ajuste a tu perfil.\nPersonalizaremos tu experiencia desde el inicio.",
+    "client": "Cliente",
+    "professional": "Profesional"
   }
 }

@@ -6,6 +6,8 @@ import {
   StyleSheet,
   Platform,
   TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image } from "expo-image";
@@ -14,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import { router } from "expo-router";
 import { useResponsive } from "@/hooks/useResponsive";
 import AppButton from "@/components/ui/AppButton";
+import Sms from "@/components/Sms";
 
 const BG = "#00140B";
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
@@ -116,12 +119,16 @@ export default function RecoveryRequest() {
           height: r.mScale(44),
           flexDirection: "row",
           alignItems: "center",
+          marginBottom: r.mScale(4),
         },
         input: { flex: 1, color: "#222", fontSize: r.mScale(14) },
         error: {
           color: "#D32F2F",
           fontSize: r.mScale(11),
-          marginTop: r.mScale(6),
+        },
+        errorSlot: {
+          height: r.mScale(37), // reserva fija para 1 línea de error
+          justifyContent: "flex-start",
         },
         footerRow: {
           marginTop: r.mScale(16),
@@ -164,59 +171,74 @@ export default function RecoveryRequest() {
             locations={[0, 0.5, 1]}
             style={s.innerShadowTop}
           />
-          <View style={s.form}>
-            <View style={s.helperWrap}>
-              <Text style={s.helper}>{t("recovery.helper")}</Text>
-            </View>
-
-            <View>
-              <Text style={s.label}>{t("recovery.emailLabel")}</Text>
-              <View
-                style={[
-                  s.inputWrap,
-                  touched &&
-                    !valid && {
-                      borderColor: "#EF5350",
-                      backgroundColor: "#FFF",
-                    },
-                ]}
-              >
-                <TextInput
-                  style={s.input}
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholder={t("recovery.emailPlaceholder")}
-                  placeholderTextColor="#A7A7A7"
-                  value={email}
-                  onChangeText={setEmail}
-                  onBlur={() => setTouched(true)}
-                />
+          <TouchableWithoutFeedback
+            onPress={() => {
+              Keyboard.dismiss();
+              setTouched(true);
+            }}
+            accessible={false}
+          >
+            <View style={s.form}>
+              <View style={s.helperWrap}>
+                <Text style={s.helper}>{t("recovery.helper")}</Text>
               </View>
 
-              <AppButton
-                label={t("recovery.send")}
-                onPress={send}
-                disabled={!valid}
-                size="md"
-                enabledBg="#B0F200"
-                disabledBg="#A4A4A4"
-                enabledText="#494949"
-                disabledText="#FFFFFF"
-                style={{ minWidth: r.mScale(200), marginTop: r.mScale(24) }}
-              />
+              <View>
+                <Text style={s.label}>{t("recovery.emailLabel")}</Text>
+                <View
+                  style={[
+                    s.inputWrap,
+                    touched &&
+                      !valid && {
+                        borderColor: "#EF5350",
+                        backgroundColor: "#FFF",
+                      },
+                  ]}
+                >
+                  <TextInput
+                    style={s.input}
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    placeholder={t("recovery.emailPlaceholder")}
+                    placeholderTextColor="#A7A7A7"
+                    value={email}
+                    onChangeText={setEmail}
+                    onBlur={() => setTouched(true)}
+                    returnKeyType="done"
+                    onSubmitEditing={() => setTouched(true)}
+                  />
+                  <Sms />
+                </View>
 
-              <View style={s.footerRow}>
-                <Text style={s.muted}>{t("recovery.remembered")}</Text>
-                <Pressable onPress={() => router.replace("/login")}>
-                  <Text style={s.link}>{t("recovery.backToLogin")}</Text>
-                </Pressable>
+                <View style={s.errorSlot}>
+                  <Text
+                    numberOfLines={1}
+                    style={[s.error, { opacity: touched && !valid ? 1 : 0 }]}
+                  >
+                    {t("recovery.invalidEmail")}
+                  </Text>
+                </View>
+
+                <View style={s.footerRow}>
+                  <AppButton
+                    label={t("recovery.send")}
+                    onPress={send}
+                    disabled={!valid}
+                    size="md"
+                    enabledBg="#B0F200"
+                    disabledBg="#A4A4A4"
+                    enabledText="#494949"
+                    disabledText="#FFFFFF"
+                    style={{ minWidth: r.mScale(200), marginTop: r.mScale(0) }}
+                  />
+                  <Text style={s.muted}>{t("recovery.remembered")}</Text>
+                  <Pressable onPress={() => router.replace("/login")}>
+                    <Text style={s.link}>{t("recovery.backToLogin")}</Text>
+                  </Pressable>
+                </View>
               </View>
             </View>
-
-            {touched && !valid ? (
-              <Text style={s.error}>{t("recovery.invalidEmail")}</Text>
-            ) : null}
-          </View>
+          </TouchableWithoutFeedback>
         </View>
       </SafeAreaView>
     </View>

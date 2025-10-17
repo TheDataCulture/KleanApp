@@ -20,6 +20,7 @@ import TutorialOverlayGradient from "../../../components/TutorialOverlayGradient
 import gardeningImg from "@/assets/images/tutorials/gardening.png";
 import cleaningImg from "@/assets/images/tutorials/cleaning.png";
 import junkImg from "@/assets/images/tutorials/junk.png";
+import PagerDots from "@/components/PagerDots";
 
 type Slide = {
   key: string;
@@ -58,12 +59,10 @@ export default function Tutorials() {
   const listRef = useRef<Animated.FlatList<Slide>>(null);
   const [idx, setIdx] = useState(0);
 
-  // Alturas/anchos de los indicadores
   const DOT_H = r.mScale(8);
   const DOT_W = r.mScale(28);
   const DOT_GAP = r.mScale(10);
 
-  // Offsets inferiores que respetan el safe area
   const CTA_BOTTOM = Math.max(insets.bottom, r.mScale(24)) + r.mScale(54);
   const DOTS_BOTTOM = CTA_BOTTOM + r.mScale(66);
 
@@ -134,26 +133,6 @@ export default function Tutorials() {
           alignItems: "center",
         },
 
-        dotSlot: {
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
-        },
-        dotCircle: {
-          position: "absolute",
-          backgroundColor: "rgba(255,255,255,0.55)",
-        },
-        dotTrack: {
-          ...StyleSheet.absoluteFillObject,
-          backgroundColor: "rgba(255,255,255,0.35)",
-          transform: [{ scaleX: 0.01 }],
-        },
-        dotFill: {
-          ...StyleSheet.absoluteFillObject,
-          backgroundColor: "#B0F200",
-          transform: [{ scaleX: 0.01 }],
-        },
-
         cta: {
           position: "absolute",
           bottom: CTA_BOTTOM,
@@ -202,7 +181,6 @@ export default function Tutorials() {
   return (
     <View style={s.root}>
       <SafeAreaView style={s.safe}>
-        {/* Carrusel animado con parallax */}
         <Animated.FlatList
           ref={listRef}
           data={SLIDES}
@@ -265,11 +243,7 @@ export default function Tutorials() {
                   ]}
                   pointerEvents="none"
                 >
-                  <Image
-                    source={item.image}
-                    style={s.image}
-                    contentFit="cover"
-                  />
+                  <Image source={item.image} style={s.image} contentFit="cover" />
                 </Animated.View>
 
                 <TutorialOverlayGradient />
@@ -277,10 +251,7 @@ export default function Tutorials() {
                 <Animated.View
                   style={[
                     s.txtWrap,
-                    {
-                      opacity: textOpacity,
-                      transform: [{ translateY: textTranslateY }],
-                    },
+                    { opacity: textOpacity, transform: [{ translateY: textTranslateY }] },
                   ]}
                 >
                   <Text style={s.title}>{t(item.titleKey)}</Text>
@@ -300,96 +271,22 @@ export default function Tutorials() {
           </Pressable>
         </View>
 
-        {/* Dots animados y clicables */}
         <View style={s.dotsRow}>
-          {SLIDES.map((_, i) => {
-            const inputRange = [
-              (i - 1) * r.width,
-              i * r.width,
-              (i + 1) * r.width,
-            ];
-
-            const active = scrollX.interpolate({
-              inputRange,
-              outputRange: [0, 1, 0],
-              extrapolate: "clamp",
-            });
-
-            const slotWidth = active.interpolate({
-              inputRange: [0, 1],
-              outputRange: [DOT_H, DOT_W],
-              extrapolate: "clamp",
-            });
-
-            const circleOpacity = active.interpolate({
-              inputRange: [0, 1],
-              outputRange: [1, 0],
-            });
-
-            const trackOpacity = active;
-            const scaleX = active.interpolate({
-              inputRange: [0, 1],
-              outputRange: [0.01, 1],
-              extrapolate: "clamp",
-            });
-
-            return (
-              <Pressable
-                key={i}
-                onPress={() => goToSlide(i)}
-                hitSlop={10}
-                style={({ pressed }) => [{ opacity: pressed ? 0.9 : 1 }]}
-              >
-                <Animated.View
-                  style={[
-                    s.dotSlot,
-                    {
-                      width: slotWidth,
-                      height: DOT_H,
-                      marginHorizontal: DOT_GAP / 2,
-                      borderRadius: DOT_H / 2,
-                    },
-                  ]}
-                >
-                  <Animated.View
-                    style={[
-                      s.dotCircle,
-                      {
-                        width: DOT_H,
-                        height: DOT_H,
-                        borderRadius: DOT_H / 2,
-                        opacity: circleOpacity,
-                      },
-                    ]}
-                  />
-                  <Animated.View
-                    style={[
-                      s.dotTrack,
-                      { borderRadius: DOT_H / 2, opacity: trackOpacity },
-                    ]}
-                  />
-                  <Animated.View
-                    style={[
-                      s.dotFill,
-                      {
-                        borderRadius: DOT_H / 2,
-                        opacity: trackOpacity,
-                        transform: [{ scaleX }],
-                      },
-                    ]}
-                  />
-                </Animated.View>
-              </Pressable>
-            );
-          })}
+          <PagerDots
+            scrollX={scrollX}
+            count={SLIDES.length}
+            itemWidth={r.width}
+            height={DOT_H}
+            widthActive={DOT_W}
+            gap={DOT_GAP}
+            onPress={goToSlide}
+          />
         </View>
 
         <Pressable onPress={onNext} style={s.cta}>
           <ArrowRightIcon size={r.mScale(35)} color="#1C1C1C" />
           <Text style={s.ctaText}>
-            {idx < SLIDES.length - 1
-              ? t("tutorials.skip")
-              : t("tutorials.finish")}
+            {idx < SLIDES.length - 1 ? t("tutorials.skip") : t("tutorials.finish")}
           </Text>
         </Pressable>
       </SafeAreaView>

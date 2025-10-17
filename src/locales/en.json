@@ -60,7 +60,7 @@
   },
   "recovery": {
     "title": "Reset password",
-    "helper": "Enter your email address and we'll send you a verification code to securely reset/nyour password.",
+    "helper": "Enter your email address and we'll send you a verification code to securely reset /n your password.",
     "emailLabel": "Email",
     "emailPlaceholder": "you@email.com",
     "invalidEmail": "ERROR! Invalid email *",
@@ -69,15 +69,15 @@
     "backToLogin": "Login"
   },
   "code": {
-      "enter":"Enter you code",
-      "sentTo": "Verification code sent to:/n{{email}}",
-      "validFor": "This code is valid for {{minutes}} minutes.",
-      "securityOnce": "For your security, the code can only be used once.",
-      "timerMin": "Time: {{time}} min",
-      "expired": "Code expired",
-      "verify": "Send",
-      "didntReceive": "Didn't receive the code?",
-      "resend": "Resend code"
+    "enter": "Enter you code",
+    "sentTo": "Verification code sent to:/n{{email}}",
+    "validFor": "This code is valid for {{minutes}} minutes.",
+    "securityOnce": "For your security, the code can only be used once.",
+    "timerMin": "Time: {{time}} min",
+    "expired": "Code expired",
+    "verify": "Send",
+    "didntReceive": "Didn't receive the code?",
+    "resend": "Resend code"
   },
   "reset": {
     "title": "Set new password",
@@ -96,5 +96,11 @@
       "reuse": "Do not reuse passwords from other platforms",
       "symbols": "Stronger if combined with symbols (e.g., @, #, $, %, etc.)"
     }
+  },
+  "register": {
+    "howUse": "How do you want to use Klean?",
+    "helper": "Select the user type that best fits your profile.\nWe’ll tailor your experience from the start.",
+    "client": "Client",
+    "professional": "Professional"
   }
 }

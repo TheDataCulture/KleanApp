@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { router } from "expo-router";
 import { useResponsive } from "@/hooks/useResponsive";
 import { EyeIcon } from "@/components/EyeIcon";
+import Sms from "@/components/Sms";
 
 const BG = "#00140B";
 
@@ -250,6 +251,7 @@ export default function Login() {
                     onChangeText={setEmail}
                     onBlur={() => setEmailTouched(true)}
                   />
+                  <Sms/>
                 </View>
                 {emailTouched && !emailValid ? (
                   <Text style={s.errorText}>{t("login.invalidEmail")}</Text>
@@ -309,7 +311,7 @@ export default function Login() {
 
               <View style={s.footerRow}>
                 <Text style={s.footerMuted}>{t("login.noAccount")}</Text>
-                <Pressable onPress={() => router.push("/signup")}>
+                <Pressable onPress={() => router.push("/register/role")}>
                   <Text style={s.footerLink}>{t("login.createAccount")}</Text>
                 </Pressable>
               </View>

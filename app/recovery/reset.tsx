@@ -17,7 +17,8 @@ import { useTranslation } from "react-i18next";
 import { useLocalSearchParams, router } from "expo-router";
 import { useResponsive } from "@/hooks/useResponsive";
 import AppButton from "@/components/ui/AppButton";
-import {RuleStatus} from "@/components/RuleStatus";
+import { RuleStatus } from "@/components/RuleStatus";
+import { EyeIcon } from "@/components/EyeIcon";
 
 const BG = "#00140B";
 
@@ -241,9 +242,7 @@ export default function RecoveryReset() {
                   placeholderTextColor="#A7A7A7"
                 />
                 <Pressable onPress={() => setShow1((v) => !v)}>
-                  <Text style={s.toggle}>
-                    {show1 ? t("login.hide") : t("login.show")}
-                  </Text>
+                  <EyeIcon open={show1} />
                 </Pressable>
               </View>
             </View>
@@ -259,10 +258,9 @@ export default function RecoveryReset() {
                   placeholder={t("reset.confirmPwdPh")}
                   placeholderTextColor="#A7A7A7"
                 />
+
                 <Pressable onPress={() => setShow2((v) => !v)}>
-                  <Text style={s.toggle}>
-                    {show2 ? t("login.hide") : t("login.show")}
-                  </Text>
+                  <EyeIcon open={show2} />
                 </Pressable>
               </View>
             </View>

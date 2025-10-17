@@ -56,5 +56,49 @@
     "createAccount": "Konto erstellen",
     "invalidEmail": "FEHLER! Ungültige E-Mail *",
     "invalidPassword": "FEHLER! Ungültiges Passwort *"
+  },
+  "recovery": {
+    "title": "Passwort zurücksetzen",
+    "helper": "Geben Sie Ihre E-Mail ein und wir senden Ihnen einen Code, um Ihr Passwort\nsicher zurückzusetzen.",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "sie@email.com",
+    "invalidEmail": "FEHLER! Ungültige E-Mail *",
+    "send": "Senden",
+    "remembered": "Sie haben bereits ein Konto?",
+    "backToLogin": "Anmelden"
+  },
+  "code": {
+    "enter": "Geben Sie Ihren Code ein",
+    "sentTo": "Bestätigungscode gesendet an:\n{{email}}",
+    "validFor": "Dieser Code ist {{minutes}} Minuten gültig.",
+    "securityOnce": "Aus Sicherheitsgründen kann der Code nur einmal verwendet werden.",
+    "timerMin": "Zeit: {{time}} Min",
+    "expired": "Code abgelaufen",
+    "verify": "Senden",
+    "didntReceive": "Code nicht erhalten?",
+    "resend": "Code erneut senden"
+  },
+  "reset": {
+    "title": "Neues Passwort festlegen",
+    "helper": "Nach dem Speichern können Sie sich mit Ihren neuen Zugangsdaten anmelden",
+    "newPwd": "Neues Passwort",
+    "newPwdPh": "********",
+    "confirmPwd": "Neues Passwort bestätigen",
+    "confirmPwdPh": "********",
+    "submit": "Speichern",
+    "rules": {
+      "len": "Mindestens 8 Zeichen",
+      "letter": "Mindestens einen Buchstaben (A–Z oder a–z)",
+      "number": "Mindestens eine Zahl (0–9)",
+      "personal": "Keine persönlichen Daten verwenden (z. B. Name oder E-Mail)",
+      "reuse": "Passwörter von anderen Plattformen nicht wiederverwenden",
+      "symbols": "Stärker mit Symbolen (z. B. @, #, $, %)"
+    }
+  },
+  "register": {
+    "howUse": "Wie möchten Sie Klean nutzen?",
+    "helper": "Wählen Sie den Nutzertyp, der am besten zu Ihrem Profil passt.\nWir passen Ihr Erlebnis von Anfang an an.",
+    "client": "Kunde",
+    "professional": "Dienstleister"
   }
 }

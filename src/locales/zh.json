@@ -56,5 +56,49 @@
     "createAccount": "创建账户",
     "invalidEmail": "错误！无效的电子邮件 *",
     "invalidPassword": "错误！无效的密码 *"
+  },
+  "recovery": {
+    "title": "重置密码",
+    "helper": "输入你的邮箱，我们会发送验证码，帮助你安全地重置\n密码。",
+    "emailLabel": "邮箱",
+    "emailPlaceholder": "you@email.com",
+    "invalidEmail": "错误！邮箱无效 *",
+    "send": "发送",
+    "remembered": "已经有账号？",
+    "backToLogin": "登录"
+  },
+  "code": {
+    "enter": "输入你的验证码",
+    "sentTo": "验证码已发送至：\n{{email}}",
+    "validFor": "验证码在 {{minutes}} 分钟内有效。",
+    "securityOnce": "出于安全考虑，验证码仅可使用一次。",
+    "timerMin": "时间：{{time}} 分",
+    "expired": "验证码已过期",
+    "verify": "发送",
+    "didntReceive": "没有收到验证码？",
+    "resend": "重新发送"
+  },
+  "reset": {
+    "title": "设置新密码",
+    "helper": "保存后即可使用新凭据登录",
+    "newPwd": "新密码",
+    "newPwdPh": "********",
+    "confirmPwd": "确认新密码",
+    "confirmPwdPh": "********",
+    "submit": "提交",
+    "rules": {
+      "len": "至少 8 个字符",
+      "letter": "包含至少一个字母（A–Z 或 a–z）",
+      "number": "包含至少一个数字（0–9）",
+      "personal": "避免使用个人信息（如姓名或邮箱）",
+      "reuse": "不要重复使用其他平台的密码",
+      "symbols": "使用符号（如 @、#、$、%）更安全"
+    }
+  },
+  "register": {
+    "howUse": "你希望如何使用 {{brand}}？",
+    "helper": "选择最符合你资料的用户类型。\n我们将从一开始就为你定制体验。",
+    "client": "客户",
+    "professional": "专业人士"
   }
 }
