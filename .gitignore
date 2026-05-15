@@ -59,3 +59,6 @@ app-example
 # Generated native folders
 ios/
 android/
+# Kiro
+.kiro/
+
