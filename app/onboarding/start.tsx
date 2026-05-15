@@ -30,69 +30,72 @@ export default function OnboardingStart() {
     }
   };
 
-  const styles = useMemo(
-    () =>
-      StyleSheet.create({
-        root: { flex: 1, backgroundColor: "#00140B" },
-        safe: { flex: 1 },
-        content: {
-          flex: 1,
-          justifyContent: "center",
-          paddingHorizontal: r.space.lg,
-          gap: r.mScale(90),
-        },
-        logo: {
-          width: r.mScale(122),
-          height: r.mScale(102),
-          alignSelf: "center",
-          marginBottom: r.space.sm,
-          marginTop: r.mScale(120),
-        },
-        brand: {
-          alignSelf: "center",
-          color: "#fff",
-          fontSize: r.text.xl,
-          fontWeight: "800",
-          letterSpacing: 1,
-        },
-        tagline: {
-          marginTop: r.mScale(80),
-          color: "#EAF5EE",
-          fontSize: r.text.xl,
-          lineHeight: r.text.xl * 1.1,
-          fontWeight: "600",
-          textAlign: "center",
-          alignSelf: "center",
-          width: "86%", // mantiene el texto contenido y centrado
-        },
-        accent: { color: "#009F4B", fontWeight: "700" },
-        btn: {
-          marginTop: r.mScale(80),
-          marginBottom: r.mScale(12),
-          alignSelf: "center",
-          backgroundColor: "#B0F200",
-          paddingHorizontal: r.space.lg,
-          paddingVertical: r.space.sm,
-          borderRadius: r.mScale(30),
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          minWidth: r.mScale(220),
-          gap: r.space.sm,
-          overflow: "hidden", // asegura recorte visual
-        },
-        // Recorta la línea del ícono para que no subraye el texto
-        iconWrap: {
-          width: r.mScale(28),
-          height: r.mScale(28),
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
-        },
-        btnText: { color: "#494949", fontWeight: "700", fontSize: r.text.lg },
-      }),
-    [r]
-  );
+  const styles = useMemo(() => {
+    const h = r.height;
+    const shrink = h <= 640 ? 0.6 : h <= 720 ? 0.8 : 1; // compacta márgenes en pantallas pequeñas
+    const taglineWidth = h <= 640 ? "94%" : h <= 720 ? "90%" : "86%";
+    const minBtn = h <= 640 ? r.mScale(190) : h <= 720 ? r.mScale(205) : r.mScale(220);
+
+    return StyleSheet.create({
+      root: { flex: 1, backgroundColor: "#00140B" },
+      safe: { flex: 1 },
+      content: {
+        flex: 1,
+        justifyContent: "center",
+        paddingHorizontal: r.space.lg,
+        paddingBottom: r.mScale(12), // leve respiro inferior en pantallas cortas
+        gap: r.mScale(90 * shrink),
+      },
+      logo: {
+        width: r.mScale(122),
+        height: r.mScale(102),
+        alignSelf: "center",
+        marginBottom: r.space.sm,
+        marginTop: r.mScale(120 * shrink),
+      },
+      brand: {
+        alignSelf: "center",
+        color: "#fff",
+        fontSize: r.text.xl,
+        fontWeight: "800",
+        letterSpacing: 1,
+      },
+      tagline: {
+        marginTop: r.mScale(80 * shrink),
+        color: "#EAF5EE",
+        fontSize: r.text.xl,
+        lineHeight: r.text.xl * 1.1,
+        fontWeight: "600",
+        textAlign: "center",
+        alignSelf: "center",
+        width: taglineWidth,
+      },
+      accent: { color: "#009F4B", fontWeight: "700" },
+      btn: {
+        marginTop: r.mScale(80 * shrink),
+        marginBottom: r.mScale(12),
+        alignSelf: "center",
+        backgroundColor: "#B0F200",
+        paddingHorizontal: r.space.lg,
+        paddingVertical: r.space.sm,
+        borderRadius: r.mScale(30),
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        minWidth: minBtn,
+        gap: r.space.sm,
+        overflow: "hidden",
+      },
+      iconWrap: {
+        width: r.mScale(28),
+        height: r.mScale(28),
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      },
+      btnText: { color: "#494949", fontWeight: "700", fontSize: r.text.lg },
+    });
+  }, [r]);
 
   return (
     <View style={styles.root}>
