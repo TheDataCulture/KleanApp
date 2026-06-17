@@ -40,5 +40,65 @@
       "title": "Payez en toute sécurité dans l’application",
       "desc": "Évaluez vos prestataires et recevez des mises à jour sur l’avancement du service."
     }
+  },
+  "login": {
+    "title": "Bienvenue !",
+    "subtitle": "Connectez-vous avec votre e-mail",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "@gmail.com",
+    "passwordLabel": "Entrez votre mot de passe",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "forgot": "Mot de passe oublié ?",
+    "cta": "Se connecter",
+    "noAccount": "Vous n’avez pas de compte ?",
+    "createAccount": "Créer un compte",
+    "invalidEmail": "ERREUR ! E-mail invalide *",
+    "invalidPassword": "ERREUR ! Mot de passe invalide *"
+  },
+  "recovery": {
+    "title": "Réinitialiser le mot de passe",
+    "helper": "Saisissez votre adresse e-mail et nous vous enverrons un code pour réinitialiser\nvotre mot de passe en toute sécurité.",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "vous@email.com",
+    "invalidEmail": "ERREUR ! E-mail invalide *",
+    "send": "Envoyer",
+    "remembered": "Vous avez déjà un compte ?",
+    "backToLogin": "Connexion"
+  },
+  "code": {
+    "enter": "Saisissez votre code",
+    "sentTo": "Code de vérification envoyé à :\n{{email}}",
+    "validFor": "Ce code est valable {{minutes}} minutes.",
+    "securityOnce": "Pour votre sécurité, ce code ne peut être utilisé qu’une seule fois.",
+    "timerMin": "Temps : {{time}} min",
+    "expired": "Code expiré",
+    "verify": "Envoyer",
+    "didntReceive": "Vous n’avez pas reçu le code ?",
+    "resend": "Renvoyer le code"
+  },
+  "reset": {
+    "title": "Définir un nouveau mot de passe",
+    "helper": "Une fois enregistré, vous pourrez vous connecter avec vos nouvelles informations",
+    "newPwd": "Nouveau mot de passe",
+    "newPwdPh": "********",
+    "confirmPwd": "Confirmer le nouveau mot de passe",
+    "confirmPwdPh": "********",
+    "submit": "Valider",
+    "rules": {
+      "len": "Au moins 8 caractères",
+      "letter": "Inclure au moins une lettre (A–Z ou a–z)",
+      "number": "Inclure au moins un chiffre (0–9)",
+      "personal": "Évitez les informations personnelles (nom, e-mail, etc.)",
+      "reuse": "Ne réutilisez pas des mots de passe d’autres plateformes",
+      "symbols": "Plus sûr avec des symboles (p. ex. @, #, $, %)"
+    }
+  },
+  "register": {
+    "howUse": "Comment souhaitez-vous utiliser Klean ?",
+    "helper": "Sélectionnez le type d’utilisateur qui correspond le mieux à votre profil.\nNous personnaliserons votre expérience dès le départ.",
+    "client": "Client",
+    "professional": "Professionnel"
   }
 }

@@ -4,14 +4,14 @@
     "slug": "klean",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "@/assets/images/icon.png",
     "scheme": "klean",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
-      "android": {
+    "android": {
       "adaptiveIcon": {
         "backgroundColor": "#00140B"
       },
@@ -21,7 +21,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/icon.png"
+      "favicon": "@/assets/images/icon.png"
     },
     "plugins": [
       "expo-router",
@@ -35,7 +35,8 @@
             "backgroundColor": "#00140B"
           }
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true,
